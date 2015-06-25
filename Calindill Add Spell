@@ -1,0 +1,15 @@
+;; Adds spells to the merchant Calindill in a way that will not conflict with other mods
+;; that might also make changes to Calindill.
+
+scn aaaAddSpellMysEmpCal
+int doOnce
+begin GameMode
+if (doOnce == 0)
+
+CalindilRef.addspell StandardMirrorImage1
+CalindilRef.addspell StandardSplitImage1
+CalindilRef.addspell StandardMasterImage1
+
+StopQuest AddSpellsMystEmpCal
+endif
+end
