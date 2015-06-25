@@ -1,0 +1,28 @@
+ScriptName RiddleChestScript
+
+Short controlvar
+Short button
+
+Begin OnActivate
+	;Chest asks riddle on activate. Player selects answer
+	If (Controlvar == 0)
+		MessageBox "Voiceless it cries, wingless flutters, toothless bites, mouthless mutters. What is it?", "Time", "Temper", "Wind", "Old Woman"
+		Set controlvar to 1
+	EndIf	
+End
+
+Begin GameMode
+	If (ControlVar == 1)
+		Set button to GetButtonPressed
+		If ( button == -1)
+			Return
+		ElseIf (button == 2)
+			MessageBox "Correct."
+			Activate
+			Set controlvar to 2
+		Else
+			MessageBox "Incorrect."
+			Set controlvar to -1
+		EndIf
+	EndIf
+End
