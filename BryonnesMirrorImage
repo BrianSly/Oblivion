@@ -1,0 +1,19 @@
+Scriptname BryonnesMI
+
+Begin ScriptEffectStart
+;You can edit the numbers to change where it appears relative to the player.
+          MiBryonneREF.moveto player 30 30 10
+          playMagicShaderVisuals effectSummonMythicDawn 2
+          playsound AMBThunder
+;Activates global quest
+          set MirrorImage to 1
+          
+End
+
+Begin ScriptEffectFinish
+;This moves the NPC back to where it was.
+;Edit the line below and change the cell name to the one your NPC was placed in.
+           MiBryonneREF.PositionCell 100 100 300 0 zClothesTest
+;Deactivates global quest
+            set MirrorImage to 0
+End
